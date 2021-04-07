@@ -74,11 +74,8 @@ input {
 }
 
 .flex {
-    /* outline: 5px solid black; */
     padding-top: 15px;
-    /* background-color: rgb(168, 168, 168); */
     margin: 0 auto;
-    /* width: 100%; */
     max-width: 1280px;
     min-width: calc(1280px - 32px);
     display: flex;
@@ -97,11 +94,9 @@ input {
 
 .card {
     cursor: pointer;
-    outline: 5px black solid;
+    outline: 4px black solid;
     font-size: 8px;
-    /* background-color: white; */
     width: 200px;
-    /* border-radius: 13px; */
     overflow: hidden;
     -webkit-box-shadow: 1px 1px 2px rgba(1, 1, 1, 0.4);
             box-shadow: 1px 1px 2px rgba(1, 1, 1, 0.4);
@@ -236,14 +231,14 @@ input {
     .flex {
         gap: 15px;
     }
-    .card {
-        width: 100px;
-    }
-    .card-body-img {
-        height: 90px;
-        width: 90px;
-    }
-    .card-body-title, .card-body-number {
+    /* .card-body-title, .card-body-number {
         font-size: 8px;
+    } */
+    .card-footer-stat h3 {
+        font-size: 8px;
+    }
+    
+    .flex {
+        width: 100%;
     }
 }
