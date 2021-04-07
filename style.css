@@ -5,6 +5,7 @@
 
 html {
     font-size: 60%;
+    background: rgba(1, 1, 1, 0.4)
 }
 html, body, pre, code, kbd, samp, input {
     font-family: 'Press Start 2P';
