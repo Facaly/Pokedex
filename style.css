@@ -200,8 +200,6 @@ input {
     background: url("img/border-right.png");
     background-repeat: repeat-y;
     grid-area: border-right;
-    height: 100%;
-    width: 16px;
 }
 .border-right-bottom {
     background: url("img/border-right-bottom.png");
@@ -238,7 +236,7 @@ input {
         font-size: 8px;
     }
     
-    .flex {
+    /* .flex {
         width: 100%;
-    }
+    } */
 }
