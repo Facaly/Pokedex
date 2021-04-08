@@ -76,13 +76,13 @@ input {
 .flex {
     padding-top: 15px;
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: calc(1280px - 32px);
     min-width: calc(1280px - 32px);
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: space-evenly;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 30px;
     padding-bottom: 15px;
 }
 
@@ -93,6 +93,7 @@ input {
 }
 
 .card {
+    animation: ease 1s;
     cursor: pointer;
     outline: 4px black solid;
     font-size: 8px;
@@ -167,6 +168,7 @@ input {
 }
 
 .border {
+    /* width: 100%; */
     display: grid;
     align-items: stretch;
     grid-template-rows: 16px 1fr 16px ;
@@ -227,13 +229,13 @@ input {
         padding-left: 10px;
     }
     .flex {
-        gap: 15px;
+        gap: 30px;
     }
     /* .card-body-title, .card-body-number {
         font-size: 8px;
     } */
     .card-footer-stat h3 {
-        font-size: 8px;
+        font-size: 15px;
     }
     
     /* .flex {
