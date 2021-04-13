@@ -1,10 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
+:root {
+    --max-width: 1280px;
+
+    --border: 16px;
 }
 
-html {
+
+* {
     font-size: 60%;
+    margin: 0;
+    padding: 0;
 }
 html, body, pre, code, kbd, samp, input {
     font-family: 'Press Start 2P';
@@ -23,13 +27,11 @@ input {
 
 .header {
     display: flex;
-    max-width: 1280px;
+    max-width: var(--max-width);
     margin: 0 auto;
-    /* height: 150px; */
 }
 
 .header div img {
-    /* padding-left: 20px; */
     height: 120px;
 }
 
@@ -37,7 +39,7 @@ input {
     height: 107px;
     margin: 25px auto;
     display: flex;
-    max-width: 1280px;
+    max-width: var(--max-width);
 }
 
 .search-bar-underline {
@@ -58,7 +60,6 @@ input {
 
 #search-input {
     caret-color: transparent;
-    /* border: 5px solid black; */
     border: none;
     letter-spacing: 4px;
     height: 25px;
@@ -70,14 +71,14 @@ input {
 
 .main {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: var(--max-width);
 }
 
 .flex {
     padding-top: 15px;
     margin: 0 auto;
-    max-width: calc(1280px - 32px);
-    min-width: calc(1280px - 32px);
+    max-width: calc(var(--max-width) - 32px);
+    min-width: calc(var(--max-width) - 32px);
     display: flex;
     justify-content: space-evenly;
     align-items: space-evenly;
@@ -93,14 +94,12 @@ input {
 }
 
 .card {
-    animation: ease 1s;
     cursor: pointer;
     outline: 4px black solid;
     font-size: 8px;
     width: 200px;
-    overflow: hidden;
-    -webkit-box-shadow: 1px 1px 2px rgba(1, 1, 1, 0.4);
-            box-shadow: 1px 1px 2px rgba(1, 1, 1, 0.4);
+    /* -webkit-box-shadow: 1px 1px 2px rgba(1, 1, 1, 0.4);
+            box-shadow: 1px 1px 2px rgba(1, 1, 1, 0.4); */
 }
 
 .card-header {
@@ -144,11 +143,8 @@ input {
 
 .card-footer {
     margin-top: 2rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     margin-bottom: 2rem;    
 }
 
@@ -159,6 +155,7 @@ input {
 }
 .card-footer-stat h3,p {
     margin-top: 2px;
+    font-size: 11px;
 }
 
 .footer {
@@ -171,8 +168,8 @@ input {
     /* width: 100%; */
     display: grid;
     align-items: stretch;
-    grid-template-rows: 16px 1fr 16px ;
-    grid-template-columns: 16px 1248px 16px;
+    grid-template-rows: var(--border) 1fr var(--border) ;
+    grid-template-columns: var(--border) 1248px var(--border);
     grid-template-areas: 
                     "border-left-top border-top border-right-top"
                     "border-left content border-right"
@@ -231,14 +228,7 @@ input {
     .flex {
         gap: 30px;
     }
-    /* .card-body-title, .card-body-number {
-        font-size: 8px;
-    } */
     .card-footer-stat h3 {
         font-size: 15px;
     }
-    
-    /* .flex {
-        width: 100%;
-    } */
 }
