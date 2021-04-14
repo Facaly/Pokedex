@@ -4,7 +4,6 @@
     --border: 16px;
 }
 
-
 * {
     font-size: 60%;
     margin: 0;
@@ -66,12 +65,15 @@ input {
     transform: translate(0, -2px);
     font-size: 20px;
     width: 240px;
-    background: url();
 }
 
 .main {
     margin: 0 auto;
     max-width: var(--max-width);
+}
+
+#main-loading {
+    font-size: 20px;
 }
 
 .flex {

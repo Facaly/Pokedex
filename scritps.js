@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchAll()
-    // .then(f = ()  => {document.getElementById('main-gif').remove()})
+    .then(f = ()  => {document.getElementById('main-loading').remove()})
     .then(f = async() => listSort(pokemon_list))
     .then(f = async() => allTemplates(pokemon_list))
 })
@@ -12,6 +12,12 @@ const search = document.getElementById("search-input")
 const listSort = (list) => {
     list.sort((a, b) => a.id - b.id)
 }
+
+var countLoading = setInterval(() => {
+    if (pokemon_list.length < 151){
+        document.getElementById('main-loading').innerHTML = `Loading! ${pokemon_list.length}/151`
+    } else (clearInterval(countLoading))
+}, 50)
 
 async function fetchAll() {
     for (let id=1; id<POKEMON_KANTO+1; id++) {
