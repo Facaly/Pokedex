@@ -73,6 +73,7 @@ input {
 }
 
 #main-loading {
+    padding: 20px;
     font-size: 20px;
 }
 
@@ -83,7 +84,7 @@ input {
     min-width: calc(var(--max-width) - 32px);
     display: flex;
     justify-content: space-evenly;
-    align-items: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
     gap: 30px;
     padding-bottom: 15px;
@@ -100,8 +101,6 @@ input {
     outline: 4px black solid;
     font-size: 8px;
     width: 200px;
-    /* -webkit-box-shadow: 1px 1px 2px rgba(1, 1, 1, 0.4);
-            box-shadow: 1px 1px 2px rgba(1, 1, 1, 0.4); */
 }
 
 .card-header {
@@ -136,6 +135,7 @@ input {
 }
 
 .card-body-number {
+    margin-top: 10px;
     font-size: 14px;
 }
 
@@ -161,13 +161,12 @@ input {
 }
 
 .footer {
-    max-width: 1280px;
+    max-width: var(--max-width);
     margin: 0 auto;
     margin-top: 25px;
 }
 
 .border {
-    /* width: 100%; */
     display: grid;
     align-items: stretch;
     grid-template-rows: var(--border) 1fr var(--border) ;

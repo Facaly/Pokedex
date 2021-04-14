@@ -14,10 +14,10 @@ const listSort = (list) => {
 }
 
 var countLoading = setInterval(() => {
-    if (pokemon_list.length < 151){
+    if (pokemon_list.length < 151) {
         document.getElementById('main-loading').innerHTML = `Loading! ${pokemon_list.length}/151`
     } else (clearInterval(countLoading))
-}, 50)
+}, 25)
 
 async function fetchAll() {
     for (let id=1; id<POKEMON_KANTO+1; id++) {
