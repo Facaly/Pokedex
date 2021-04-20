@@ -1,7 +1,7 @@
 :root {
     --max-width: 1280px;
-
-    --border: 16px;
+    --width-interno: 1216px;
+    --border: 32px;
 }
 
 * {
@@ -35,7 +35,7 @@ input {
 }
 
 .search-bar {
-    height: 107px;
+    height: 150px;
     margin: 25px auto;
     display: flex;
     max-width: var(--max-width);
@@ -80,8 +80,8 @@ input {
 .flex {
     padding-top: 15px;
     margin: 0 auto;
-    max-width: calc(var(--max-width) - 32px);
-    min-width: calc(var(--max-width) - 32px);
+    max-width: calc(var(--max-width) - 64px);
+    min-width: calc(var(--max-width) - 64px);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -170,7 +170,7 @@ input {
     display: grid;
     align-items: stretch;
     grid-template-rows: var(--border) 1fr var(--border) ;
-    grid-template-columns: var(--border) 1248px var(--border);
+    grid-template-columns: var(--border) 1216px var(--border);
     grid-template-areas: 
                     "border-left-top border-top border-right-top"
                     "border-left content border-right"
