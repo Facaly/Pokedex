@@ -5,24 +5,28 @@
 }
 
 * {
-	font-size: 60%;
+	/* font-size: 60%; */
 	margin: 0;
 	padding: 0;
-	background: gray;
+	/* background: gray; */
 }
-html, body, pre, code, kbd, samp, input {
+body, pre, code, kbd, samp, input {
 	font-family: 'Press Start 2P';
 	line-height: 15px;
 }
-label {    
-	padding: 10px 20px;
-	font-size: 2rem;
-	padding-left: 20px;
+label, span {
+	margin-top: 20px;
+	font-size: 1.5rem;
 }
 input {
+	padding-top: 20px;
 	height: 100%;
-	padding-left: 4px;
+	padding-left: 1px;
 	outline:none;
+}
+
+li {
+	list-style: none;
 }
 
 .header {
@@ -36,16 +40,19 @@ input {
 }
 
 .search-bar {
-	height: 250px;
 	margin: 25px auto;
-	display: flex;
-	justify-content: space-around;
 	max-width: var(--max-width);
+}
+
+.search-bar-content {
+	padding: 20px 0px;
+	padding-left: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .search-bar-underline {
 	display: flex;
-	padding-left: 156px;
 	bottom: 2px;
 }
 .underline-down {
@@ -69,6 +76,16 @@ input {
 	width: 240px;
 }
 
+.search-bar-sort-button {
+	padding-top: 40px;
+	font-size: 1.5rem;
+	width: 50%;
+}
+
+.hidden {
+	display: none;
+	/* display: initial; */
+}
 .main {
 	margin: 0 auto;
 	max-width: var(--max-width);
@@ -82,8 +99,8 @@ input {
 .flex {
 	padding-top: 15px;
 	margin: 0 auto;
-	max-width: calc(var(--max-width) - 64px);
-	min-width: calc(var(--max-width) - 64px);
+	max-width: var(--width-interno);
+	/* min-width: calc(var(--max-width) - 64px); */
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -172,7 +189,7 @@ input {
 	display: grid;
 	align-items: stretch;
 	grid-template-rows: var(--border) 1fr var(--border) ;
-	grid-template-columns: var(--border) 1216px var(--border);
+	grid-template-columns: var(--border) var(--width-interno) var(--border);
 	grid-template-areas: 
 					"border-left-top border-top border-right-top"
 					"border-left content border-right"
@@ -180,7 +197,7 @@ input {
 }
 
 .content {
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	grid-area: content;
 }
 .border-left-top {

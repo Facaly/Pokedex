@@ -32,33 +32,44 @@
 		<div class="border-bottom"></div>
 		<div class="border-left-bottom"></div>
 		<div class="border-left"></div>
-		<label spellcheck="false" class="content">
-			Buscar:
-			<input type="text" id="search-input" maxlength="10">
-			<div class="search-bar-underline"> 
-				<div id="search-bar-underline-1" class="underline-down"></div>
-				<div id="search-bar-underline-2" class="underline-down"></div>
-				<div id="search-bar-underline-3" class="underline-down"></div>
-				<div id="search-bar-underline-4" class="underline-down"></div>
-				<div id="search-bar-underline-5" class="underline-down"></div>
-				<div id="search-bar-underline-6" class="underline-down"></div>
-				<div id="search-bar-underline-7" class="underline-down"></div>
-				<div id="search-bar-underline-8" class="underline-down"></div>
-				<div id="search-bar-underline-9" class="underline-down"></div>
-				<div id="search-bar-underline-10" class="underline-down"></div>
+		<div class="content search-bar-content">
+			<div>
+
+				<label spellcheck="false">
+					Buscar:
+				<input type="text" id="search-input" maxlength="10">
+				<div class="search-bar-underline"> 
+					<div id="search-bar-underline-1" class="underline-down"></div>
+					<div id="search-bar-underline-2" class="underline-down"></div>
+					<div id="search-bar-underline-3" class="underline-down"></div>
+					<div id="search-bar-underline-4" class="underline-down"></div>
+					<div id="search-bar-underline-5" class="underline-down"></div>
+					<div id="search-bar-underline-6" class="underline-down"></div>
+					<div id="search-bar-underline-7" class="underline-down"></div>
+					<div id="search-bar-underline-8" class="underline-down"></div>
+					<div id="search-bar-underline-9" class="underline-down"></div>
+					<div id="search-bar-underline-10" class="underline-down"></div>
+				</div>
 			</div>
 			<div>
-				<span>Ordenar por:
+				<span>Ordenar por:</span>
+					<div class="search-bar-sort-button">Alf. A-Z
+						<ul class="search-bar-sort-menu hidden">
+							<li id="Alphabetic">Alf. A-Z</li>
+							<li id="ReverseAlphabetic">Alf. Z-A</li>
+							<li id="Numeric">Número asc.</li>
+							<li id="ReverseNumeric">Número des.</li>
+						</ul>
+					</div>
+			</div>
+			<div>
+				<span>Filtrar p/tipo:
 					<ul>
-						<li>Número ascendente</li>
-						<li>Número descendente</li>
-						<li>Alfabético A-Z</li>
-						<li>Alfabético Z-A</li>
 					</ul>
-				</div>
-			</span>
-			
-			<!-- <a href="public/pokemon.html">AAAA</a> -->
+				</span>
+			</div>
+		</div>
+		</span>
 		</label>
 	</section>
 	<main class="main border">
