@@ -79,12 +79,10 @@ li {
 .search-bar-sort-button {
 	padding-top: 40px;
 	font-size: 1.5rem;
-	width: 50%;
 }
 
 .hidden {
 	display: none;
-	/* display: initial; */
 }
 .main {
 	margin: 0 auto;

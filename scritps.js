@@ -11,17 +11,17 @@ const search = document.getElementById("search-input")
 
 const listSort = (list, sortingBy) => {
 	switch (sortingBy) {
+		case "Numeric":
+			list.sort((a, b) => a.id - b.id)
+			break;
+		case "ReverseNumeric":
+			list.sort((a, b) => b.id - a.id)
 		case "Alphabetic":
 			list.sort((a, b) => (a.name > b.name) ? 1 : -1)
 			break;
 		case "ReverseAlphabetic":
 			list.sort((a, b) => (a.name > b.name) ? -1 : 1)
 			break;
-		case "Numeric":
-			list.sort((a, b) => a.id - b.id)
-			break;
-		case "ReverseNumeric":
-			list.sort((a, b) => b.id - a.id)
 	}
 }
 
