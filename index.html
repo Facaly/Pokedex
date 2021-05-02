@@ -53,19 +53,34 @@
 			</div>
 			<div>
 				<span>Ordenar por:</span>
-					<div class="search-bar-sort-button">Número asc.
-						<ul class="search-bar-sort-menu hidden">
-							<li id="Numeric">Número asc.</li>
-							<li id="ReverseNumeric">Número des.</li>
-							<li id="Alphabetic">Alf. A-Z</li>
-							<li id="ReverseAlphabetic">Alf. Z-A</li>
+					<div class="search-bar-sort-button" id="search-bar-sort-button">Número asc.
+						<ul class="search-bar-sort-menu hidden" id="search-bar-sort-menu">
+							<div class="border-left-top"></div>
+							<div class="border-top"></div>
+							<div class="border-right-top"></div>
+							<div class="border-right"></div>
+							<div class="border-right-bottom"></div>
+							<div class="border-bottom"></div>
+							<div class="border-left-bottom"></div>
+							<div class="border-left"></div>
+							<div class="content content-menu">
+								<li id="Numeric">Número asc.</li>
+								<li id="ReverseNumeric">Número des.</li>
+								<li id="Alphabetic">Alf. A-Z</li>
+								<li id="ReverseAlphabetic">Alf. Z-A</li>
+							</div>
 						</ul>
 					</div>
 			</div>
 			<div>
 				<span>Filtrar p/tipo:
-					<ul>
-					</ul>
+					<div class="search-bar-filter-button" id="search-bar-filter-button">Ninguno
+						<ul class="search-bar-filter-menu hidden" id="search-bar-filter-menu">
+							<li>Fuego</li>
+							<li>Agua</li>
+							<li>Tierra</li>
+							<li>Aire</li>
+						</ul>
 				</span>
 			</div>
 		</div>
@@ -83,18 +98,6 @@
 		<div class="border-left"></div>
 		<div class="flex content" id="pokemon-click"><span id="main-loading">Loading! 0/151</span></div> 
 	</main>
-
-	<!-- <footer class="footer border">
-		<div class="border-left-top"></div>
-		<div class="border-top"></div>
-		<div class="border-right-top"></div>
-		<div class="border-right"></div>
-		<div class="border-right-bottom"></div>
-		<div class="border-bottom"></div>
-		<div class="border-left-bottom"></div>
-		<div class="border-left"></div>
-		<div class="footer-text content">aposidfhjapsodfijasdofijaspdf</div>
-	</footer> -->
 
 	<template id="pokemon-card">
 		<article class="card">

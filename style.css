@@ -27,6 +27,10 @@ input {
 
 li {
 	list-style: none;
+	cursor: pointer;
+	height: 42px;
+	padding-left: 50px ;
+	margin-top: 10px;
 }
 
 .header {
@@ -45,6 +49,7 @@ li {
 }
 
 .search-bar-content {
+	height: 79px;
 	padding: 20px 0px;
 	padding-left: 20px;
 	display: grid;
@@ -76,9 +81,32 @@ li {
 	width: 240px;
 }
 
-.search-bar-sort-button {
-	padding-top: 40px;
-	font-size: 1.5rem;
+.search-bar-sort-button, .search-bar-filter-button {
+	cursor: pointer;
+	height: fit-content;
+	width: fit-content;
+    margin-top: 40px;
+    font-size: 1.5rem;
+}
+
+/* ACOMODAR TODO EL MENU */
+
+.search-bar-sort-menu, .search-bar-filter-menu {
+	position: absolute;
+	background: white;
+	width: fit-content;	
+	height: fit-content;
+	transform: translateY(-126px) translateX(-80px);
+	display: flex;
+	flex-direction: column;
+	/* gap: 15px; */
+	/* height: 119px; */
+}
+
+li:hover {
+	background: url('img/arrow.png');
+	/* background-size: ; */
+	background-repeat: no-repeat;
 }
 
 .hidden {
@@ -105,12 +133,6 @@ li {
 	flex-wrap: wrap;
 	gap: 30px;
 	padding-bottom: 15px;
-}
-
-.flex>img {
-	margin-top: calc(50vh - 267px);
-	width: 200px;
-	margin-bottom: calc(50vh - 115px);
 }
 
 .card {
@@ -194,9 +216,24 @@ li {
 					"border-left-bottom border-bottom border-right-bottom";
 }
 
+.border-menu {
+	display: grid;
+	align-items: stretch;
+	grid-template-rows: var(--border) min-content var(--border) ;
+	grid-template-columns: var(--border) 1fr var(--border);
+	grid-template-areas: 
+					"border-left-top border-top border-right-top"
+					"border-left content border-right"
+					"border-left-bottom border-bottom border-right-bottom";
+}
+
 .content {
 	/* box-sizing: border-box; */
 	grid-area: content;
+}
+
+.content-menu {
+	margin-top: 20px;
 }
 .border-left-top {
 	background: url("img/border-left-top.png");

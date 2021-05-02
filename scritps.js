@@ -16,6 +16,7 @@ const listSort = (list, sortingBy) => {
 			break;
 		case "ReverseNumeric":
 			list.sort((a, b) => b.id - a.id)
+			break;
 		case "Alphabetic":
 			list.sort((a, b) => (a.name > b.name) ? 1 : -1)
 			break;
@@ -122,6 +123,20 @@ const toggleSearchBarUnderline = (space) => {
 	document.querySelector(`#search-bar-underline-${space}`).classList.toggle("underline-down")
 	document.querySelector(`#search-bar-underline-${space}`).classList.toggle("underline-top")
 }
+const toggleMenu = (menu) => {
+	document.getElementById(menu).classList.toggle("hidden")
+	document.getElementById(menu).classList.toggle("border-menu")
+}
+const pickOptionMenu = (button, target) => {
+	document.getElementById(button).childNodes[0].textContent = target.target.innerHTML
+	eraseTemplates()
+	allTemplates(pokemon_list)
+	// document.getElementById(button).childNodes[0].textContent = option
+}
+
+// const sortBy = (target) => {
+// 	listSort(pokemon_list,)
+// }
 // const pokemonClickId = () => {
 
 // }
@@ -129,4 +144,9 @@ const toggleSearchBarUnderline = (space) => {
 document.getElementById("search-input").addEventListener("focus", () => toggleSearchBarUnderline(search.value.length+1))
 document.getElementById("search-input").addEventListener("blur", () => toggleSearchBarUnderline(search.value.length+1))
 document.getElementById("search-input").addEventListener("input", () => searchValue())
+document.getElementById('search-bar-sort-button').addEventListener("click", () => toggleMenu('search-bar-sort-menu'))
+document.getElementById('search-bar-filter-button').addEventListener("click", () => toggleMenu('search-bar-filter-menu'))
+document.getElementById('search-bar-sort-menu').addEventListener("click", (x) => listSort(pokemon_list, x.path[0].getAttribute('id')))
+document.getElementById('search-bar-sort-menu').addEventListener("click", (x) => pickOptionMenu('search-bar-sort-button', x))
+
 // document.getElementById("pokemon-click").addEventListener("click", (x) => console.log(x.path[0].innerHTML))
