@@ -5,10 +5,8 @@
 }
 
 * {
-	/* font-size: 60%; */
 	margin: 0;
 	padding: 0;
-	/* background: gray; */
 }
 body, pre, code, kbd, samp, input {
 	font-family: 'Press Start 2P';
@@ -28,9 +26,9 @@ input {
 li {
 	list-style: none;
 	cursor: pointer;
-	height: 42px;
+	height: 52px;
 	padding-left: 50px ;
-	margin-top: 10px;
+	transform: translateY(12px);
 }
 
 .header {
@@ -91,7 +89,7 @@ li {
 
 /* ACOMODAR TODO EL MENU */
 
-.search-bar-sort-menu, .search-bar-filter-menu {
+.search-bar-sort-menu {
 	position: absolute;
 	background: white;
 	width: fit-content;	
@@ -102,10 +100,24 @@ li {
 	/* gap: 15px; */
 	/* height: 119px; */
 }
+.search-bar-filter-menu {
+	position: absolute;
+	background: white;
+	width: fit-content;
+	height: fit-content;
+	transform: translateY(-126px) translateX(-431px);
+}
+
+.filter-menu {
+	margin-top: 20px;
+	/* width: 600px; */
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
 
 li:hover {
 	background: url('img/arrow.png');
-	/* background-size: ; */
+	background-size: 32px;
 	background-repeat: no-repeat;
 }
 
@@ -209,7 +221,7 @@ li:hover {
 	display: grid;
 	align-items: stretch;
 	grid-template-rows: var(--border) 1fr var(--border) ;
-	grid-template-columns: var(--border) var(--width-interno) var(--border);
+	grid-template-columns: var(--border) 1fr var(--border);
 	grid-template-areas: 
 					"border-left-top border-top border-right-top"
 					"border-left content border-right"
@@ -241,7 +253,7 @@ li:hover {
 	grid-area: border-left-top;
 }
 .border-top {
-	background: url("img/border-top.png");
+	background: url("img/border-top-bottom.png");
 	background-repeat: repeat-x;
 	grid-area: border-top;
 }
@@ -251,7 +263,7 @@ li:hover {
 	grid-area: border-right-top;
 }
 .border-right {
-	background: url("img/border-right.png");
+	background: url("img/border-left-right.png");
 	background-repeat: repeat-y;
 	grid-area: border-right;
 }
@@ -261,7 +273,7 @@ li:hover {
 	grid-area: border-right-bottom;
 }
 .border-bottom {
-	background: url("img/border-bottom.png");
+	background: url("img/border-top-bottom.png");
 	background-repeat: repeat-x;
 	grid-area: border-bottom;
 }
@@ -271,7 +283,7 @@ li:hover {
 	grid-area: border-left-bottom;
 }
 .border-left {
-	background: url("img/border-left.png");
+	background: url("img/border-left-right.png");
 	background-repeat: repeat-y;
 	grid-area: border-left;
 }
