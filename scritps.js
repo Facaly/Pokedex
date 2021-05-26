@@ -188,6 +188,9 @@ const pickOptionMenu = (button, option) => {
 			case 'search-bar-filter-button':
 				listFilter(pokemon_list, option.path[0].getAttribute('id'))
 				selectedOptionArrow(button, option.path[0].getAttribute('id'))
+				setTimeout(() => {
+					searchValue(pokemon_filter)
+				}, 1);
 				break;
 		}
 	}
@@ -196,13 +199,12 @@ const pickOptionMenu = (button, option) => {
 const getPokemon = (click) => {
 	if (click.path[0].getAttribute('id') != 'pokemon-click'){
 		var pokemon = click.path.find(el => el.getAttribute('class') === 'card').getAttribute('id')
-		console.log(pokemon)
 		infoPanel(pokemon)
 	}
 }
 
 const infoPanelToggle = (reset) => {
-	(reset === 'reset' ? infoPanelReset() : console.log(2))
+	if (reset === 'reset') {infoPanelReset()}
 	document.querySelector('.info-panel').classList.toggle('hidden')
 	document.querySelector('.info-panel').classList.toggle('border')	
 	document.querySelector('.info-panel-description-close').classList.remove('interval-animation')

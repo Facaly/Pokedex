@@ -7,22 +7,27 @@
 }
 
 * {
-	line-height: 20px;
-    font-size: 12px;
+    font-size: 10px;
 	margin: 0;
 	padding: 0;
 }
 
-body, pre, code, kbd, samp, input {
+body, input{
 	font-family: 'Press Start 2P';
 	background: var(--background)
 }
 
 input {
-	padding-top: 10px;
-	padding-left: 1px;
+	margin-top: 5px;
+	padding-left: 2px;
 	outline:none;
     box-sizing: content-box;
+	caret-color: transparent;
+	border: none;
+	display: block;
+	font-size: 12px;
+	letter-spacing: 6px;
+	width: 180px;
 }
 
 li {
@@ -60,13 +65,24 @@ li:hover {
 }
 
 .search-bar-content {
-	padding: 10px 0px;
-	box-sizing: content-box;
+	padding: 5px 0px;
+	margin: 0 auto;
 	gap: 10px;
+	box-sizing: content-box;
 	display: flex;
-	align-items: center;
-    flex-direction: column;
+	flex-direction: column;
 }
+
+.search-bar-name {
+	grid-area: search-bar-name 
+}
+.search-bar-order {
+	grid-area: search-bar-order
+}
+.search-bar-filter {
+	grid-area: search-bar-filter
+}
+
 .search-bar-underline {
 	display: flex;
 	bottom: 2px;
@@ -84,47 +100,38 @@ li:hover {
 	background-image: url("../img/searchBar2.png");
 }
 
-#search-input {
-	caret-color: transparent;
-	border: none;
-	display: block;
-	font-size: 14px;
-	letter-spacing: 4px;
-	/* height: 25px; */
-	transform: translate(0, -2px);
-	/* width: 240px; */
-	width: 180px;
-}
 .search-bar-sort-button, .search-bar-filter-button {
 	cursor: pointer;
 	height: fit-content;
 	width: fit-content;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .search-bar-sort-menu {
 	position: absolute;
 	background: var(--background);
-	transform: translateY(-157px);
+	/* transform: translateY(-157px); */
+	top: 50px;
+	left: 0;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	max-width: var(--max-width);
+	width: 100%;
 }
 
 .search-bar-filter-menu {
 	position: fixed;
 	background: var(--background);
-	height: 100vh;
 	top: 0;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
+	left: 0;
+	margin: 0px auto;
 	max-width: var(--max-width);
+	width: 100%;
 }
 
 .filter-menu {
-	margin-top: 20px;
+	margin-top: 10px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
@@ -144,7 +151,7 @@ li:hover {
 	grid-area: content;
 }
 .content-menu {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 .border-left-top {
 	background: url("../img/border-left-top.png");
@@ -203,15 +210,25 @@ li:hover {
 	display: none;
 }
 
+.flex {
+	padding-top: 5px;
+	min-height: var(--border);
+	max-width: var(--width-interno);
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding-bottom: 5px;
+}
+
 .main {
 	margin: 0 auto;
 	max-width: var(--max-width);
 }
 
 #main-loading {
-	padding: 20px;
-	margin-right: 0 auto;
-	/* font-size: 14px; */
+	margin: 0 auto;
+	font-size: 14px;
 }
 
 .info-panel {
@@ -222,17 +239,15 @@ li:hover {
 	background: white;
 	top: 0;
 	position: fixed;
-	max-width: 1280px;
+	max-width: var(--max-width);
 }
 .info-content {
 	display: grid;
-	grid-template-columns: 45% 55%;
-	grid-template-rows: 10% 35% 5% 50%;
+	grid-template-rows: 50% 50%;
+	grid-template-columns: 8% 38% 54%;
 	grid-template-areas: 
-					"info-panel-margin info-panel-margin"
-					"info-panel-card info-panel-stats"
-					"info-panel-border info-panel-border"
-					"info-panel-description info-panel-description";
+					"info-panel-margin info-panel-card info-panel-description"
+					"info-panel-margin info-panel-stats info-panel-description"
 }
 
 .info-panel-card {
@@ -245,26 +260,26 @@ li:hover {
 	justify-content: space-between;
 	grid-area: info-panel-card;
 }
-
 .info-panel-img {
 	transform:scaleX(-1);
 	object-fit: contain;
 }
-
 .info-panel-stats {
 	grid-area: info-panel-stats;
 	transform: translateX(10px) translateY(-10px);
 	text-transform: uppercase;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 .info-panel-border {
 	background-image: url("../img/info-panel-border.png");
 	background-size: contain;
 	background-repeat: no-repeat;
-	/* background-size: 100% 100%; */
+	background-position: center;
 	grid-area: info-panel-border;
+	/* transform: rotate(90deg); */
+	/* background-size: 100% 100%; */
 }
 .info-panel-description {
 	display: flex;
@@ -288,29 +303,18 @@ li:hover {
 }
 .interval-animation {
 	display: block;
-	/* transition: ease-out repeat; */
 } 
-
-
-.flex {
-	padding-top: 15px;
-	margin: 0 auto;
-	max-width: var(--width-interno);
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	gap: 15px;
-	padding-bottom: 15px;
-}
 
 .card {
 	cursor: pointer;
 	outline: 2px black solid;
-	width: 140px;
-	height: 212px;
+	line-height: 12px;
+	height: 175px;
+	background: var(--background);
 }
 
 .card-header {
+	background: white;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -325,17 +329,15 @@ li:hover {
 }
 
 .card-body-img {
-	margin-bottom: 10px;
-	margin-top: 10px;
-	width: 100px;
-	height: 100px;
-	background-color: var(--background);
+	margin: 5px;
+	width: 110px;
+	height: 110px;
 }
 
 .card-body-title {
 	text-transform: uppercase;
-	margin-top: 10px;
-	font-size: 12px;
+	margin-top: 5px;
+	font-size: 10px;
 }
 
 .card-body-title span {
@@ -343,11 +345,7 @@ li:hover {
 }
 
 .card-body-number {
-	font-size: 10px;
-}
-
-.card-footer {
-	height: fit-content;
+	font-size: 8px;
 }
 
 .card-footer {
@@ -355,28 +353,46 @@ li:hover {
 }
 
 .card-footer-stat h3,p {
-	font-size: 10px;
+	font-size: 8px;
 }
 
 @media screen and (min-width: 360px) {
 	* {
-		font-size: 14px;
+		font-size: 12px;
 	}
 	.info-panel-description-text {
-		padding: 25px; 
-		font-size: 14px;
 		line-height: 30px; 
 	} 
-	.search-bar-filter-menu {
-		position: absolute;
-		height: initial;
-		top: initial;
-		transform: translateY(-227px);
+	.search-bar-content {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+						"search-bar-name search-bar-name"
+						"search-bar-order search-bar-filter";
+	}
+	
+}
+@media screen and (min-width: 480px) {
+	.filter-menu {
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
-@media screen and (max-width: 480px) {
-	.search-bar-sort-menu, .search-bar-filter-menu {
-	left: 0;
-	width: 100%;
+
+/* LANDSCAPE NADA MAS */
+
+@media screen and (min-height: 480px) {
+	.info-content {
+		display: grid;
+		grid-template-columns: 45% 55%;
+		grid-template-rows: 8% 34% 8% 50%;
+		grid-template-areas: 
+						"info-panel-margin info-panel-margin"
+						"info-panel-card info-panel-stats"
+						"info-panel-border info-panel-border"
+						"info-panel-description info-panel-description";
+	}
+	.info-panel-stats{
+		justify-content: space-between;
 	}
 }

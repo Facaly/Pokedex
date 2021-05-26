@@ -5,8 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 	<!-- <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" /> -->
-	<!-- <link rel="stylesheet" href="style.css"> -->
 	<link rel="stylesheet" href="styles/mobile.css">
+	<link rel="stylesheet" href="styles/tablet.css">
+	<link rel="stylesheet" href="styles/desktop.css">
 	<link rel="icon" type="image/png" href="img/pokedex-icon.jpg">
 	<title>Pokedex</title>
 </head>
@@ -34,10 +35,11 @@
 		<div class="border-left-bottom"></div>
 		<div class="border-left"></div>
 		<div class="content search-bar-content">
-			<div>
-				<label spellcheck="false">
+			<div class="search-bar-name">
+				<label spellcheck="false" >
 					Buscar:
-				<input type="text" id="search-input" maxlength="10">
+					<input type="text" id="search-input" maxlength="10">
+				</label>
 				<div class="search-bar-underline"> 
 					<div id="search-bar-underline-1" class="underline-down"></div>
 					<div id="search-bar-underline-2" class="underline-down"></div>
@@ -51,7 +53,7 @@
 					<div id="search-bar-underline-10" class="underline-down"></div>
 				</div>
 			</div>
-			<div>
+			<div class="search-bar-order">
 				<span>Ordenar por:</span>
 				<div class="search-bar-sort-button numeric" id="search-bar-sort-button">Número asc.
 					<ul class="search-bar-sort-menu hidden" id="search-bar-sort-menu">
@@ -63,7 +65,7 @@
 						<div class="border-bottom"></div>
 						<div class="border-left-bottom"></div>
 						<div class="border-left"></div>
-						<div class="content content-menu" id="search-bar-sort-options">
+						<div class="content content-menu hidden" id="search-bar-sort-options">
 							<li id="numeric" class="option-selected">Número asc.</li>
 							<li id="reverseNumeric">Número des.</li>
 							<li id="alphabetic">Alf. A-Z</li>
@@ -72,7 +74,7 @@
 					</ul>
 				</div>
 			</div>
-			<div>
+			<div class="search-bar-filter">
 				<span>Filtrar tipo:
 				<div class="search-bar-filter-button none" id="search-bar-filter-button">Ninguno
 					<ul class="search-bar-filter-menu hidden" id="search-bar-filter-menu">

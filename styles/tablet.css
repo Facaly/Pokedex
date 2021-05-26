@@ -1,0 +1,25 @@
+@media screen and (min-width: 640px) {
+	:root {
+        --border: 24px;
+    }
+    * {
+		font-size: 14px;
+	}
+    .search-bar-filter-menu {
+        transform: none;
+    }
+    .search-bar-content {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "search-bar-name search-bar-order search-bar-filter";
+	}
+    /* .search-bar-filter-menu {
+        position: absolute;
+        background: white;
+        width: fit-content;
+        height: fit-content;
+        transform: translateY(-126px) translateX(-431px);
+    } 
+    */
+}
