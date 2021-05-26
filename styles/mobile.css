@@ -356,6 +356,12 @@ li:hover {
 	font-size: 8px;
 }
 
+@media screen and (max-height: 360px) {
+	.info-panel * {
+		font-size: 11px;
+	}
+}
+
 @media screen and (min-width: 360px) {
 	* {
 		font-size: 12px;
@@ -373,6 +379,7 @@ li:hover {
 	}
 	
 }
+
 @media screen and (min-width: 480px) {
 	.filter-menu {
 		grid-template-columns: 1fr 1fr 1fr;
@@ -385,7 +392,7 @@ li:hover {
 	.info-content {
 		display: grid;
 		grid-template-columns: 45% 55%;
-		grid-template-rows: 8% 34% 8% 50%;
+		grid-template-rows: 7% 38% 7% ;
 		grid-template-areas: 
 						"info-panel-margin info-panel-margin"
 						"info-panel-card info-panel-stats"
