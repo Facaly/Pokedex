@@ -358,7 +358,7 @@ li:hover {
 
 @media screen and (max-height: 360px) {
 	.info-panel * {
-		font-size: 11px;
+		font-size: 10px;
 	}
 }
 
