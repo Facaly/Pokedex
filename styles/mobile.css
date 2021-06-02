@@ -2,8 +2,8 @@
 	--max-width: 1280px;
 	--width-interno: 1216px;
 	--border: 16px;
-	--background: rgb(248, 248, 248)
-	/* --background: #555 */
+	--background: rgb(248, 248, 248);
+	--font-size: 12px;
 }
 
 * {
@@ -55,6 +55,12 @@ li:hover {
 	margin: 0 auto;
 	max-width: var(--max-width);
 }
+
+.header-content {
+	display: flex;
+	justify-content	: space-between;
+}
+
 .header div img {
 	height: 60px;
 }
@@ -76,9 +82,11 @@ li:hover {
 .search-bar-name {
 	grid-area: search-bar-name 
 }
+
 .search-bar-order {
 	grid-area: search-bar-order
 }
+
 .search-bar-filter {
 	grid-area: search-bar-filter
 }
@@ -87,12 +95,14 @@ li:hover {
 	display: flex;
 	bottom: 2px;
 }
+
 .underline-down {
     width: 18px;
 	height: 11px;
     background-size: contain;
 	background-image: url("../img/searchBar.png");
 }
+
 .underline-top {
 	width: 18px;
 	height: 11px;
@@ -101,7 +111,6 @@ li:hover {
 }
 
 .search-bar-sort-button, .search-bar-filter-button {
-	cursor: pointer;
 	height: fit-content;
 	width: fit-content;
     margin-top: 10px;
@@ -110,7 +119,6 @@ li:hover {
 .search-bar-sort-menu {
 	position: absolute;
 	background: var(--background);
-	/* transform: translateY(-157px); */
 	top: 50px;
 	left: 0;
 	margin: 0 auto;
@@ -136,7 +144,7 @@ li:hover {
 	grid-template-columns: 1fr 1fr;
 }
 
-.border, .border-menu {
+.border {
 	display: grid;
 	align-items: stretch;
 	grid-template-rows: var(--border) 1fr var(--border) ;
@@ -150,51 +158,60 @@ li:hover {
 .content {
 	grid-area: content;
 }
+
 .content-menu {
 	margin-top: 10px;
 }
+
 .border-left-top {
 	background: url("../img/border-left-top.png");
 	background-repeat: no-repeat;
 	grid-area: border-left-top;
 	background-size: contain;
 }
+
 .border-top {
 	background: url("../img/border-top-bottom.png");
 	background-repeat: repeat-x;
 	grid-area: border-top;
 	background-size: contain;
 }
+
 .border-right-top {
 	background: url("../img/border-right-top.png");
 	background-repeat: no-repeat;
 	grid-area: border-right-top;
 	background-size: contain;
 }
+
 .border-right {
 	background: url("../img/border-left-right.png");
 	background-repeat: repeat-y;
 	grid-area: border-right;
 	background-size: contain;
 }
+
 .border-right-bottom {
 	background: url("../img/border-right-bottom.png");
 	background-repeat: no-repeat;
 	grid-area: border-right-bottom;
 	background-size: contain;
 }
+
 .border-bottom {
 	background: url("../img/border-top-bottom.png");
 	background-repeat: repeat-x;
 	grid-area: border-bottom;
 	background-size: contain;
 }
+
 .border-left-bottom {
 	background: url("../img/border-left-bottom.png");
 	background-repeat: no-repeat;
 	grid-area: border-left-bottom;
 	background-size: contain;
 }
+
 .border-left {
 	background: url("../img/border-left-right.png");
 	background-repeat: repeat-y;
@@ -241,6 +258,7 @@ li:hover {
 	position: fixed;
 	max-width: var(--max-width);
 }
+
 .info-content {
 	display: grid;
 	grid-template-rows: 50% 50%;
@@ -260,10 +278,12 @@ li:hover {
 	justify-content: space-between;
 	grid-area: info-panel-card;
 }
+
 .info-panel-img {
 	transform:scaleX(-1);
 	object-fit: contain;
 }
+
 .info-panel-stats {
 	grid-area: info-panel-stats;
 	transform: translateX(10px) translateY(-10px);
@@ -272,41 +292,43 @@ li:hover {
 	flex-direction: column;
 	justify-content: space-evenly;
 }
+
 .info-panel-border {
 	background-image: url("../img/info-panel-border.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	grid-area: info-panel-border;
-	/* transform: rotate(90deg); */
-	/* background-size: 100% 100%; */
 }
+
 .info-panel-description {
 	display: flex;
 	flex-direction: column;
 	grid-area: info-panel-description;
 }
+
 .info-panel-description-text {
 	padding: 10px; 
 	font-size: 14px;
 	line-height: 20px; 
 }
+
 .info-panel-description-close {
-	cursor: pointer;
 	display: none;
 	margin-top: auto;
 	margin-left: auto;
 	padding-bottom: 5px;
 }
+
 .info-panel-description-arrow {
 	transform: translateY(5px) rotate(90deg);
 }
+
 .interval-animation {
 	display: block;
 } 
 
 .card {
-	cursor: pointer;
 	outline: 2px black solid;
 	line-height: 12px;
 	height: 175px;
@@ -356,14 +378,15 @@ li:hover {
 	font-size: 8px;
 }
 
-
 @media screen and (min-width: 360px) {
 	* {
 		font-size: 12px;
 	}
+
 	.info-panel-description-text {
 		line-height: 30px; 
 	} 
+
 	.search-bar-content {
 		display: grid;
 		grid-template-rows: 1fr 1fr;
@@ -381,8 +404,6 @@ li:hover {
 	}
 }
 
-/* LANDSCAPE NADA MAS */
-
 @media screen and (min-height: 480px) {
 	.info-content {
 		display: grid;
@@ -394,6 +415,7 @@ li:hover {
 						"info-panel-border info-panel-border"
 						"info-panel-description info-panel-description";
 	}
+
 	.info-panel-stats{
 		justify-content: space-between;
 	}

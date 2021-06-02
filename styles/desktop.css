@@ -2,5 +2,106 @@
 	:root {
 	--border: 32px;
 	}
+
+	* {
+		font-size: 18px;
+	}
+
+	li {
+		list-style: none;
+		cursor: pointer;
+		height: 52px;
+		padding-left: 50px ;
+		transform: translateY(12px);
+	}
+
+	input {	
+		padding-top: 10px;
+		letter-spacing: 4px;
+		transform: translate(0, -2px);
+		font-size: 20px;
+	}
+
+	.header div img {
+		height: 80px;
+	}
+
+	.underline-down, .underline-top {
+		width: 24px;
+		height: 15px;	
+	}
+
+	.search-bar-sort-button, .search-bar-filter-button {
+		cursor: pointer;
+		margin-top: 25px;
+	}
+	
+	.search-bar-sort-menu {
+		transform: translateY(-98px) translateX(-80px);
+	}
+
+	.search-bar-filter-menu {
+		transform: translateY(-98px) translateX(-450px);
+	}
+
+	#main-loading {
+		padding: 20px;
+		font-size: 20px;
+	}
+
+	.info-panel-description-text {
+		padding: 30px;
+		font-size: 22px;
+		line-height: 45px;
+	}
+
+	.info-panel-description-close {
+		cursor: pointer;
+		padding: 20px;
+		font-size: 22px;
+	}
+
+	.flex {
+		max-width: var(--width-interno);
+		gap: 30px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	.card {
+		cursor: pointer;
+		outline: 4px black solid;
+		width: 150px;
+		height: 200px;
+	}
+	.card-header {
+		border-bottom: 4px solid black;
+	}
+
+	.card-body-img {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.card-body-title {
+		padding-top: 5px;
+		font-size: 14px;
+	}
+
+	.card-body-number {
+		margin-top: 7px;
+		font-size: 12px;
+	}
+
+	.card-footer {
+		margin-top: 7px;
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.card-footer-stat h3,p {
+		font-size: 9px;
+	}
 }
 

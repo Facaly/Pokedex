@@ -2,32 +2,47 @@
 	:root {
         --border: 24px;
     }
+	
     * {
 		font-size: 14px;
 	}
+
     .search-bar-filter-menu {
         transform: none;
     }
+
     .search-bar-content {
+        width: 95%;
 		display: grid;
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "search-bar-name search-bar-order search-bar-filter";
 	}
-    /* .search-bar-filter-menu {
-        position: absolute;
-        background: white;
-        width: fit-content;
-        height: fit-content;
-        transform: translateY(-126px) translateX(-431px);
-    } 
-    */
+
+    .search-bar-sort-menu {
+		top: initial;
+		left: initial;
+		width: initial;	
+		height: initial;
+		transform: translateY(-68px) translateX(-80px);
+	}
+
+	.search-bar-filter-menu {
+		position: absolute;
+		width: initial;
+		height: initial;
+		left: initial;
+		top: initial;
+        right: 0;
+		transform: translateY(-68px);
+	}
 }
 
 @media screen and (max-height: 360px) {
 	:root {
         --border: 16px;
     }
+
 	.info-panel * {
 		font-size: 10px;
 	}

@@ -44,10 +44,12 @@ const listFilter = (list, filterBy) => {
 		eraseTemplates()
 		allTemplates(pokemon_filter)
 	} else {
-		pokemon_filter = pokemon_list
-		listSort(pokemon_filter)
-		eraseTemplates()
-		allTemplates(pokemon_list)
+		if (search.value.length) {
+			allTemplates(pokemon_filter)
+		} else {
+			pokemon_filter = pokemon_list
+			allTemplates(pokemon_list)
+		}
 	}
 }
 
@@ -124,7 +126,7 @@ const eraseTemplates = () => {
 }
 
 const searchValue = (list) => {
-	const pokemon_search = []
+	pokemon_search = []
 	const searchIndex = search.value.length
 	for (pokemon of list) {
 		if (pokemon.name.substr(0, searchIndex) === search.value.toLowerCase()){
@@ -134,6 +136,27 @@ const searchValue = (list) => {
 	searchBarUnderline(searchIndex+1)
 	eraseTemplates()
 	allTemplates(pokemon_search)
+}
+
+const searchAndOption = (button, option) => {
+	switch (button) {
+		case 'search-bar-sort-button':
+			if (search.value.length) {
+				listSort(pokemon_search, option.path[0].getAttribute('id'))
+				allTemplates(pokemon_search)
+			} else {
+				listSort(pokemon_filter, option.path[0].getAttribute('id'))
+				allTemplates(pokemon_filter)
+			}
+			break;
+		case 'search-bar-filter-button':
+			if (search.value.length) {
+				listFilter(pokemon_search, option.path[0].getAttribute('id'))
+			} else {
+				listFilter(pokemon_list, option.path[0].getAttribute('id'))
+			}
+			break;
+	}
 }
 
 const searchBarUnderline = (letters) => {
@@ -163,14 +186,14 @@ const selectedOptionArrow = (menu, option) => {
 
 const toggleMenu = (menu, otherMenu) => {
 	document.getElementById(menu).classList.toggle('hidden')
-	document.getElementById(menu).classList.toggle('border-menu')
+	document.getElementById(menu).classList.toggle('border')
 	closeOtherMenu(otherMenu)
 }
 
 const closeOtherMenu = (menu) => {
 	if (!document.getElementById(menu).classList.contains('hidden')) {	
 		document.getElementById(menu).classList.toggle('hidden')
-		document.getElementById(menu).classList.toggle('border-menu')
+		document.getElementById(menu).classList.toggle('border')
 	}
 }
 
@@ -180,17 +203,27 @@ const pickOptionMenu = (button, option) => {
 		switch (button) {
 			case 'search-bar-sort-button':
 				listSort(pokemon_list, option.path[0].getAttribute('id'))
-				listSort(pokemon_filter, option.path[0].getAttribute('id'))
 				eraseTemplates()
-				allTemplates(pokemon_filter)
+				//  +++++
+				if (search.value.length) {
+					listSort(pokemon_search, option.path[0].getAttribute('id'))
+					allTemplates(pokemon_search)
+				} else {
+					listSort(pokemon_filter, option.path[0].getAttribute('id'))
+					allTemplates(pokemon_filter)
+				}
+				// +++++++
 				selectedOptionArrow(button, option.path[0].getAttribute('id'))
 				break;
 			case 'search-bar-filter-button':
+				eraseTemplates()
+				// -------
 				listFilter(pokemon_list, option.path[0].getAttribute('id'))
 				selectedOptionArrow(button, option.path[0].getAttribute('id'))
 				setTimeout(() => {
 					searchValue(pokemon_filter)
-				}, 1);
+				}, 0);
+				// -------
 				break;
 		}
 	}
