@@ -133,7 +133,13 @@ const searchValue = (list) => {
 			pokemon_search.push(pokemon)
 		}
 	}
-	searchBarUnderline(searchIndex+1)
+	if (searchIndex === 10) {
+			for (i = 1; i <11; i++) {
+			downSearchBarUnderline(i)
+		}
+	} else {
+		searchBarUnderline(searchIndex+1)
+	}
 	eraseTemplates()
 	allTemplates(pokemon_search)
 }
@@ -172,10 +178,13 @@ const downSearchBarUnderline = (letterQuant) => {
 }
 
 const toggleSearchBarUnderline = (letterQuant) => {
-	document.querySelector(`#search-bar-underline-${letterQuant}`).classList.toggle('underline-down')
-	document.querySelector(`#search-bar-underline-${letterQuant}`).classList.toggle('underline-top')
-	closeOtherMenu('search-bar-sort-menu')
-	closeOtherMenu('search-bar-filter-menu')
+	if (letterQuant != 11) {
+		document.querySelector(`#search-bar-underline-${letterQuant}`).classList.toggle('underline-down')
+		document.querySelector(`#search-bar-underline-${letterQuant}`).classList.toggle('underline-top')
+		closeOtherMenu('search-bar-sort-menu')
+		closeOtherMenu('search-bar-filter-menu')
+	}
+
 }
 
 const selectedOptionArrow = (menu, option) => {

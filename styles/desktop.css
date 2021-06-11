@@ -16,6 +16,7 @@
 	}
 
 	input {	
+		width: 300px;
 		padding-top: 10px;
 		letter-spacing: 4px;
 		transform: translate(0, -2px);
