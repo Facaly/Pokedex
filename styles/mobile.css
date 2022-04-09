@@ -7,8 +7,12 @@
 	--font-size: 12px;
 }
 
+* img {
+	image-rendering: pixelated;
+}
+
 * {
-    font-size: 10px;
+  font-size: 10px;
 	margin: 0;
 	padding: 0;
 }
@@ -22,7 +26,7 @@ input {
 	margin-top: 5px;
 	padding-left: 2px;
 	outline:none;
-    box-sizing: content-box;
+  box-sizing: content-box;
 	caret-color: transparent;
 	border: none;
 	display: block;
@@ -54,7 +58,6 @@ li:hover {
 .header {
 	display: flex;
 	margin: 0 auto;
-	
 }
 
 .header-content {
@@ -99,23 +102,23 @@ li:hover {
 }
 
 .underline-down {
-    width: 18px;
+  width: 18px;
 	height: 11px;
-    background-size: contain;
+  background-size: contain;
 	background-image: url("../img/searchBar.png");
 }
 
 .underline-top {
 	width: 18px;
 	height: 11px;
-    background-size: contain;
+  background-size: contain;
 	background-image: url("../img/searchBar2.png");
 }
 
 .search-bar-sort-button, .search-bar-filter-button {
 	height: fit-content;
 	width: fit-content;
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .search-bar-sort-menu {
@@ -147,14 +150,6 @@ li:hover {
 }
 
 .border {
-	/* display: grid;
-	align-items: stretch;
-	grid-template-rows: var(--border) 1fr var(--border) ;
-	grid-template-columns: var(--border) 1fr var(--border);
-	grid-template-areas: 
-					"border-left-top border-top border-right-top"
-					"border-left content border-right"
-					"border-left-bottom border-bottom border-right-bottom"; */
 	max-width: var(--width-interno);
 	border: var(--border) solid;
 	border-image: url('../img/borders.png') var(--border-image) stretch;
@@ -202,7 +197,7 @@ li:hover {
 	left: 50%;
 	width: 100vw;
 	height: 100vh;
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 	background: white;
 	top: 0;
 	position: fixed;
@@ -217,21 +212,23 @@ li:hover {
 	grid-template-columns: 8% 38% 54%;
 	grid-template-areas: 
 					"info-panel-margin info-panel-card info-panel-description"
-					"info-panel-margin info-panel-stats info-panel-description"
+					"info-panel-margin info-panel-stats info-panel-stats"
 }
 
 .info-panel-card {
 	box-sizing: content-box;
 	text-align: center;
-	display: flex;
-	padding: 10px;
-	gap: 10px;
 	flex-direction: column;
 	justify-content: space-between;
 	grid-area: info-panel-card;
 }
 
+.info-panel-number {
+	padding-top: 6vh;
+}
+
 .info-panel-img {
+	height: 30vh;
 	transform:scaleX(-1);
 	object-fit: contain;
 }
@@ -279,7 +276,36 @@ li:hover {
 	position: absolute;
 	right: 0px;
 	bottom: 0px;
-} 
+
+  animation-name: blinking ;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name: blinking ;
+  -webkit-animation-duration: 1.2s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinking {  
+  0% { opacity: 1.0; }
+  50% { opacity: 1.0; }
+  51% { opacity: 0.0; }
+	100% { opacity: 0.0 }
+}
+
+@-webkit-keyframes blinking  {  
+  0% { opacity: 1.0; }
+  50% { opacity: 1.0; }
+  51% { opacity: 0.0; }
+	100% { opacity: 0.0 }
+}
+
+@keyframes blinking  {  
+  0% { opacity: 1.0; }
+  50% { opacity: 1.0; }
+  51% { opacity: 0.0; }
+	100% { opacity: 0.0 }
+}
 
 .card {
 	outline: 2px black solid;
@@ -360,10 +386,10 @@ li:hover {
 @media screen and (min-height: 480px) {
 	.info-content {
 		display: grid;
-		grid-template-columns: 45% 55%;
+		grid-template-columns: 48% 52%;
 		grid-template-rows: 7% 38% 7% ;
 		grid-template-areas: 
-						"info-panel-margin info-panel-margin"
+						"info-panel-card info-panel-margin"
 						"info-panel-card info-panel-stats"
 						"info-panel-border info-panel-border"
 						"info-panel-description info-panel-description";
@@ -371,5 +397,10 @@ li:hover {
 
 	.info-panel-stats{
 		justify-content: space-between;
+	}
+
+	.info-panel-description-text {
+		font-size: 18px;
+		line-height: 24px; 
 	}
 }

@@ -273,7 +273,7 @@ const infoPanel = async(pokemon) => {
 }
 
 const infoPanelReset = () => {
-		document.querySelector('.info-panel-img').setAttribute('src', '')
+		document.querySelector('.info-panel-img').setAttribute('src', 'https://raw.githubusercontent.com/Facaly/Pokedex/main/img/WhiteBox.png')
 		document.querySelector('.info-panel-title').textContent = ' '
 		document.querySelector('.info-panel-genera').textContent = ' '
 		document.querySelector('.info-panel-height').textContent = 'HT ?´ ??´´'
