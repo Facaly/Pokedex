@@ -36,6 +36,11 @@
     right: 0;
 		transform: translateY(-68px);
 	}
+
+	.info-panel-img {
+		height: 30vh;
+	}
+
 }
 
 @media screen and (max-height: 360px) {
